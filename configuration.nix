@@ -39,8 +39,8 @@
     containers.fud = {
     autoStart = true; 
     privateNetwork = true;
-    hostAddress = "192.168.1.200";
-    localAddress = "192.168.1.201";
+    hostAddress = "192.168.0.201";
+    localAddress = "192.168.0.202";
     config = { config, pkgs, ...}: {
 
       # Set your time zone.
@@ -107,14 +107,14 @@
 
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
+  # services.xserver.enable = true;
+  # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
 
 
   # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
 
   system.stateVersion = "17.09"; # Did you read the comment?
