@@ -18,7 +18,8 @@
 
   # Networking
   networking = {
-    # networkmanager.enable = true;	
+    # networkmanager.enable = true;
+    wireless.enable = true;
     hostName = "delldesk"; # Define your hostname.
     interfaces.wlp1s0.ip4 = [ { address = "192.168.0.201"; prefixLength = 24; } ];
     defaultGateway = "192.168.0.1";
@@ -35,7 +36,6 @@
 
 
   # Containers
-
     containers.fud = {
     autoStart = true; 
     privateNetwork = true;
@@ -52,7 +52,7 @@
       # List packages installed in system profile
       environment.systemPackages = with pkgs; [
         wget vim emacs git zsh autoconf gnumake tree 
-        ncurses rxvt_unicode openjdk leiningen
+        ncurses rxvt_unicode openjdk leiningen wpa_supplicant
       ];
 
       users.extraUsers.fenton = {
