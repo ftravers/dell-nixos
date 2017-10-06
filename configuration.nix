@@ -35,36 +35,6 @@
   };
 
 
-  # Containers
-    containers.fud = {
-    autoStart = true; 
-    privateNetwork = true;
-    hostAddress = "192.168.0.201";
-    localAddress = "192.168.0.202";
-    config = { config, pkgs, ...}: {
-
-      # Set your time zone.
-      time.timeZone = "America/Vancouver";
-
-      networking.firewall.enable = false;
-      services.openssh.enable = true;
-
-      # List packages installed in system profile
-      environment.systemPackages = with pkgs; [
-        wget vim emacs git zsh autoconf gnumake tree 
-        ncurses rxvt_unicode openjdk leiningen wpa_supplicant
-      ];
-
-      users.extraUsers.fenton = {
-        isNormalUser = true;
-        uid = 1000;
-        hashedPassword = "$6$/pK0lFCWLEBBWMJ$S9vMo8Qd2YL1jRuw4S8O7xdB/S4bBaPUVgWQOCkfUK19fJAD2cVGwRKG3017YnbjzFbMkVG5Xe3RuNhWY6zZY/";
-        extraGroups = [ "wheel" ];
-        openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAG5wvPKRrqqiOBKZ5dUqF5oK7vd1zNuVsrrAAQCcEkVC2SBXVy5yiCiO7xPz7Wk6oSl+5nvkitYQ4HVuNO+mroUcmbge/e344sfyOytrV2BqFTuijlc+BkBTMk55piHKBgl50l4gIdtTdKk1b0iiTxc5gdhlUr4LUF+mPc5NnuKgMEJLApoFeNKrzbR+Z5ZsLypeFNxzkaAw8mjqRoDoi1lab7tDN/KrVKZ46AYXm9Tix64MdxXI6T+p6Z+2rAQQ0ieexVtVUJBiifaKrvqgr57v8WPFk8VIYb9MbtlxtHdHz/regzZA4L6K+46QpSFeBX29esx1/tuihv/hU8ndf fenton@ss9" ];
-      };
-    };
-  }; 
-
 
   # Select internationalisation properties.
   i18n = {
@@ -82,7 +52,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     wget vim dhcpcd
-    git mkpasswd autoconf gnumake tree ncurses rxvt_unicode 
+    git mkpasswd autoconf gnumake tree ncurses rxvt_unicode wpa_supplicant
     emacs firefox chromium
   ];
 
