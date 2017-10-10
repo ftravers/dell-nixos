@@ -28,12 +28,6 @@
       userControlled.enable = true;
       userControlled.group = "wheel";
       networks = {
-        # "1529-5G" = {
-      	#   psk = "abc7654321";
-        # };
-	# "1529-2.4G" = {
-	#   psk = "abc7654321";
-	# };
 	"1529-upstairs-2.4" = {
 	  psk = "abc7654321";
 	};
