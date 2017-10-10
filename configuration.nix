@@ -16,6 +16,12 @@
   networking = {
     # networkmanager.enable = true;
 
+
+    interfaces.wlp1s0.ip4 = [ { address = "192.168.1.201"; prefixLength = 24; } ];
+    defaultGateway = "192.168.1.254";
+    nameservers = [ "8.8.8.8" ];
+
+
     wireless = {
       enable = true;
       interfaces = ["wlp1s0"];
