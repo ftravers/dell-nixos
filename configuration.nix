@@ -17,8 +17,8 @@
     # networkmanager.enable = true;
 
 
-    interfaces.wlp1s0.ip4 = [ { address = "192.168.1.201"; prefixLength = 24; } ];
-    defaultGateway = "192.168.1.254";
+    interfaces.wlp1s0.ip4 = [ { address = "192.168.0.150"; prefixLength = 24; } ];
+    defaultGateway = "192.168.0.1";
     nameservers = [ "8.8.8.8" ];
 
 
@@ -28,9 +28,15 @@
       userControlled.enable = true;
       userControlled.group = "wheel";
       networks = {
-        "1529-5G" = {
-      	  psk = "abc7654321";
-        };
+        # "1529-5G" = {
+      	#   psk = "abc7654321";
+        # };
+	# "1529-2.4G" = {
+	#   psk = "abc7654321";
+	# };
+	"1529-upstairs-2.4" = {
+	  psk = "abc7654321";
+	};
       };
     };
 
